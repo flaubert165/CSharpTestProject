@@ -1,7 +1,5 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using CSharpTestProject.Domain.Entities;
-using CSharpTestProject.Domain.Entities.Enums;
 using CSharpTestProject.Domain.IRepositories;
 using CSharpTestProject.Domain.IServices;
 
@@ -23,17 +21,13 @@ namespace CSharpTestProject.Services.Services
 
         public Hotel GetCheapestHotel(Reservation reservation)
         {
-            List<Hotel> hotelsList = _hotelRepository.GetHotels()
-                                        .OrderBy(h => h.WeekdayRate[CustomerType.Regular])
-                                        .ThenBy(h => h.WeekdayRate[CustomerType.Rewards])
-                                        .ThenBy(h => h.WeekendRate[CustomerType.Regular])
-                                        .ThenBy(h => h.WeekendRate[CustomerType.Rewards]).ToList();
+            Hotel cheapestHotel = null;
 
-            Hotel cheapestHotel = new Hotel();
+            List<Hotel> hotelsList = _hotelRepository.GetHotels();
 
             foreach (Hotel currentHotel in hotelsList)
             {
-                if (string.IsNullOrEmpty(cheapestHotel.Name))
+                if (cheapestHotel == null)
                 {
                     cheapestHotel = currentHotel;
                 }
