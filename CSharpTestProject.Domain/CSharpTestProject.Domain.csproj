@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Entities\" />
+    <Folder Include="Entities\Enums\" />
+    <Folder Include="IServices\" />
+    <Folder Include="Resources\" />
+    <Folder Include="IRepositories\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Entities\Enums\HotelTest.cs" />
+  </ItemGroup>
+</Project>
