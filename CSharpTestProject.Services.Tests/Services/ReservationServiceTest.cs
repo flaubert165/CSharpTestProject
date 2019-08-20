@@ -14,12 +14,7 @@ namespace CSharpTestProject.Services.Tests.Services
 
         public ReservationServiceTest()
         {
-            _reservation = new Reservation
-            {
-                CustomerType = CustomerType.Regular,
-                DailyOnWeekDaysCounter = 3,
-                DailyOnWeekendDaysCounter = 0
-            };
+            _reservation = new Reservation(CustomerType.Regular, 3, 0);
 
             _reservationService = new ReservationService();
         }

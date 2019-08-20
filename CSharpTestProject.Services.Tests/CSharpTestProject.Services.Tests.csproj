@@ -10,6 +10,7 @@
   <ItemGroup>
     <ProjectReference Include="..\CSharpTestProject.Domain\CSharpTestProject.Domain.csproj" />
     <ProjectReference Include="..\CSharpTestProject.Services\CSharpTestProject.Services.csproj" />
+    <ProjectReference Include="..\CSharpTestProject.Infrastructure\CSharpTestProject.Infrastructure.csproj" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="ExpectedObjects" Version="2.3.4" />

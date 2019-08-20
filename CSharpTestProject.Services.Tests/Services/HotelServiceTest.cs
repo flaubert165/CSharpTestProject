@@ -16,42 +16,45 @@ namespace CSharpTestProject.Services.Tests.Services
         {
             yield return new object[]
             {
-                new Hotel {
-                    Name = "Lakewood",
-                    Rating = 3,
-                    WeekdayRate = new Dictionary<CustomerType, decimal> {
+                new Hotel
+                (
+                    "Lakewood",
+                    3,
+                    new Dictionary<CustomerType, decimal> {
                         { CustomerType.Regular, 110.0m},
                         { CustomerType.Rewards, 80.0m}
                     },
-                    WeekendRate = new Dictionary<CustomerType, decimal> {
+                    new Dictionary<CustomerType, decimal> {
                         { CustomerType.Regular, 90.0m},
                         { CustomerType.Rewards, 80.0m}
                     }
-                },
-                new Hotel {
-                    Name = "Bridgewood",
-                    Rating = 4,
-                    WeekdayRate = new Dictionary<CustomerType, decimal> {
+                ),
+                new Hotel
+                (
+                    "Bridgewood",
+                    4,
+                    new Dictionary<CustomerType, decimal> {
                         { CustomerType.Regular, 160.0m},
                         { CustomerType.Rewards, 110.0m}
                     },
-                    WeekendRate = new Dictionary<CustomerType, decimal> {
+                    new Dictionary<CustomerType, decimal> {
                         { CustomerType.Regular, 60.0m},
                         { CustomerType.Rewards, 50.0m}
                     }
-                },
-                new Hotel {
-                    Name = "Ridgewood",
-                    Rating = 3,
-                    WeekdayRate = new Dictionary<CustomerType, decimal> {
+                ),
+                new Hotel
+                (
+                    "Ridgewood",
+                    5,
+                    new Dictionary<CustomerType, decimal> {
                         { CustomerType.Regular, 220.0m},
                         { CustomerType.Rewards, 100.0m}
                     },
-                    WeekendRate = new Dictionary<CustomerType, decimal> {
+                    new Dictionary<CustomerType, decimal> {
                         { CustomerType.Regular, 150.0m},
                         { CustomerType.Rewards, 40.0m}
                     }
-                }
+                )
             };
         }
 
@@ -77,18 +80,18 @@ namespace CSharpTestProject.Services.Tests.Services
             _hotelRepositoryMock = new Mock<IHotelRepository>();
             _hotelService = new HotelService(_hotelRepositoryMock.Object);
             _expected = new Hotel
-            {
-                Name = "Bridgewood",
-                Rating = 4,
-                WeekdayRate = new Dictionary<CustomerType, decimal> {
+            (
+                "Bridgewood",
+                4,
+                new Dictionary<CustomerType, decimal> {
                         { CustomerType.Regular, 160.0m},
                         { CustomerType.Rewards, 110.0m}
-                    },
-                WeekendRate = new Dictionary<CustomerType, decimal> {
+                },
+                new Dictionary<CustomerType, decimal> {
                         { CustomerType.Regular, 60.0m},
                         { CustomerType.Rewards, 50.0m}
-                    }
-            };
+                }
+            );
         }
 
         [Theory]

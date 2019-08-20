@@ -6,9 +6,9 @@
 
   <ItemGroup>
     <ProjectReference Include="..\CSharpTestProject.Domain\CSharpTestProject.Domain.csproj" />
+    <ProjectReference Include="..\CSharpTestProject.Infrastructure\CSharpTestProject.Infrastructure.csproj" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Services\" />
-    <Folder Include="Repositories\" />
   </ItemGroup>
 </Project>
